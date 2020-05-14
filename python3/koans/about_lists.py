@@ -29,10 +29,10 @@ class AboutLists(Koan):
     def test_accessing_list_elements(self):
         noms = ['peanut', 'butter', 'and', 'jelly']
 
-        self.assertEqual(__, noms[0])
-        self.assertEqual(__, noms[3])
-        self.assertEqual(__, noms[-1])
-        self.assertEqual(__, noms[-3])
+        self.assertEqual('peanut', noms[0])
+        self.assertEqual('jelly', noms[3])
+        self.assertEqual('jelly', noms[-1])
+        self.assertEqual('butter', noms[-3])
 
     def test_slicing_lists(self):
         noms = ['peanut', 'butter', 'and', 'jelly']
