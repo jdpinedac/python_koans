@@ -12,7 +12,7 @@ def my_global_function(a,b):
 
 class AboutMethods(Koan):
     def test_calling_a_global_function(self):
-        self.assertEqual(__, my_global_function(2,3))
+        self.assertEqual(5, my_global_function(2,3))
 
     # NOTE: Wrong number of arguments is not a SYNTAX error, but a
     # runtime error.
@@ -33,7 +33,7 @@ class AboutMethods(Koan):
             msg = e.args[0]
 
         # Note, watch out for parenthesis. They need slashes in front!
-        self.assertRegex(msg, __)
+        self.assertRegex(msg, "position")
 
     # ------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ class AboutMethods(Koan):
         sum = a + b
 
     def test_which_does_not_return_anything(self):
-        self.assertEqual(__, self.pointless_method(1, 2))
+        self.assertEqual(None, self.pointless_method(1, 2))
         # Notice that methods accessed from class scope do not require
         # you to pass the first "self" argument?
 
@@ -51,8 +51,8 @@ class AboutMethods(Koan):
         return [a, b]
 
     def test_calling_with_default_values(self):
-        self.assertEqual(__, self.method_with_defaults(1))
-        self.assertEqual(__, self.method_with_defaults(1, 2))
+        self.assertEqual([1, 'default_value'], self.method_with_defaults(1))
+        self.assertEqual([1, 2], self.method_with_defaults(1, 2))
 
     # ------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ class AboutMethods(Koan):
         return args
 
     def test_calling_with_variable_arguments(self):
-        self.assertEqual(__, self.method_with_var_args())
+        self.assertEqual(TypeError, self.method_with_var_args())
         self.assertEqual(('one',), self.method_with_var_args('one'))
         self.assertEqual(__, self.method_with_var_args('one', 'two'))
 
