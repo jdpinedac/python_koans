@@ -24,7 +24,7 @@ class AboutExceptions(Koan):
 
             ex2 = ex
 
-        self.assertEqual(__, result)
+        self.assertEqual('Oops', result)
 
         self.assertEqual(__, isinstance(ex2, Exception))
         self.assertEqual(__, isinstance(ex2, RuntimeError))
